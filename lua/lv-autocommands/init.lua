@@ -24,10 +24,15 @@ utils.define_augroups({
         {'BufWinEnter', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'BufRead', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
         {'BufNewFile', '*', 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o'},
-        {'VimLeavePre', '*', 'set title set titleold='}
+        {'VimLeavePre', '*', 'set title set titleold='},
+
+		-- {'BufEnter', '*', 'lua require\'completion\'.on_attach()'}
 
         -- {'User', 'GoyoLeave', 'lua require(\'galaxyline\').disable_galaxyline()'},
         -- {'User', 'GoyoEnter', 'lua require(\'galaxyline\').galaxyline_augroup()'},
+    },
+    _dart = {
+        {'FileType', 'dart', 'setlocal ts=2 sw=2 sts=2'},
     },
     _java = {
         {'FileType', 'java', 'luafile ~/.config/nvim/lua/lsp/java-ls.lua'},

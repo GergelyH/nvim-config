@@ -30,6 +30,7 @@ end
 
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
+vim.cmd('let g:sneak#label = 1')
 return require("packer").startup(
     function(use)
         -- Packer can manage itself as an optional plugin
@@ -39,6 +40,9 @@ return require("packer").startup(
         use {"neovim/nvim-lspconfig", opt = true}
         use {"glepnir/lspsaga.nvim", opt = true}
         use {"kabouzeid/nvim-lspinstall", opt = true}
+
+		-- Additional lsp
+		use  {"norcalli/snippets.nvim", opt = True}
 
         -- Tlescope
         use {"nvim-lua/popup.nvim", opt = true}
@@ -50,6 +54,7 @@ return require("packer").startup(
 
         -- Atocomplete
         use {"hrsh7th/nvim-compe", opt = true}
+        -- use {"nvim-lua/completion-nvim", opt = true}
         use {"hrsh7th/vim-vsnip", opt = true}
         use {"rafamadriz/friendly-snippets", opt = true}
 
@@ -66,7 +71,7 @@ return require("packer").startup(
         use {"lewis6991/gitsigns.nvim", opt = true}
         use {"liuchengxu/vim-which-key", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
-        use {"windwp/nvim-autopairs", opt = true}
+        -- use {"windwp/nvim-autopairs", opt = true}
         use {"terrortylor/nvim-comment", opt = true}
         use {"kevinhwang91/nvim-bqf", opt = true}
 
@@ -80,6 +85,15 @@ return require("packer").startup(
         use {"glepnir/galaxyline.nvim", opt = true}
         use {"romgrk/barbar.nvim", opt = true}
 
+		-- Flutter 
+        use {"thosakwe/vim-flutter", opt = true}
+
+		-- vim-surround
+		use {"machakann/vim-sandwich" , opt = true}
+
+		-- Sneak
+		use {"justinmk/vim-sneak", opt = true}
+
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
         require_plugin("nvim-lspinstall")
@@ -88,6 +102,7 @@ return require("packer").startup(
         require_plugin("telescope.nvim")
         require_plugin("nvim-dap")
         require_plugin("nvim-compe")
+        -- require_plugin("completion-nvim")
         require_plugin("vim-vsnip")
         require_plugin("nvim-treesitter")
         require_plugin("nvim-ts-autotag")
@@ -95,12 +110,16 @@ return require("packer").startup(
         require_plugin("gitsigns.nvim")
         require_plugin("vim-which-key")
         require_plugin("dashboard-nvim")
-        require_plugin("nvim-autopairs")
+        -- require_plugin("nvim-autopairs")
         require_plugin("nvim-comment")
         require_plugin("nvim-bqf")
         require_plugin("nvcode-color-schemes.vim")
         require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
         require_plugin("barbar.nvim")
+        require_plugin("vim-flutter")
+        require_plugin("snippets.nvim")
+        require_plugin("vim-sandwich")
+        require_plugin("vim-sneak")
     end
 )

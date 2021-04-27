@@ -25,12 +25,26 @@ require'compe'.setup {
         spell = {kind = "  "},
         tags = false,
         vim_dadbod_completion = true,
-        -- snippets_nvim = {kind = "  "},
+        snippets_nvim = {kind = "  "},
         -- ultisnips = {kind = "  "},
         -- treesitter = {kind = "  "},
         emoji = {kind = " ﲃ ", filetypes={"markdown", "text"}}
         -- for emoji press : (idk if that in compe tho)
     }
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+  properties = {
+    'documentation',
+    'detail',
+    'additionalTextEdits',
+  }
+}
+
+require'lspconfig'.rust_analyzer.setup {
+  capabilities = capabilities,
 }
 
 -- 
