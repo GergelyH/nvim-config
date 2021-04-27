@@ -16,7 +16,6 @@ require('lv-gitsigns')
 require('lv-nvimtree')
 require('lv-treesitter')
 require('lv-autopairs')
-require('lv-barbar')
 require('lv-rnvimr')
 
 -- Which Key (Hope to replace with Lua plugin someday)
@@ -48,6 +47,9 @@ require('lsp.latex-ls')
 require('lsp.svelte-ls')
 require('lsp.tailwindcss-ls')
 
-
 --Own 
 vim.cmd('luafile ~/.config/nvim/own-init.lua')
+
+require('lsp.ruby-ls')
+require('lsp.kotlin-ls')
+require('lsp.lua-ls')

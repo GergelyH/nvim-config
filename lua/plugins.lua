@@ -40,28 +40,28 @@ return require("packer").startup(
         use {"glepnir/lspsaga.nvim", opt = true}
         use {"kabouzeid/nvim-lspinstall", opt = true}
 
-		-- Additional lsp
-		use  {"norcalli/snippets.nvim", opt = True}
+	-- Additional lsp
+	use  {"norcalli/snippets.nvim", opt = True}
 
-        -- Tlescope
+        -- Telescope
         use {"nvim-lua/popup.nvim", opt = true}
         use {"nvim-lua/plenary.nvim", opt = true}
         use {"nvim-telescope/telescope.nvim", opt = true}
 
-        -- Dbugging
+        -- Debugging
         use {"mfussenegger/nvim-dap", opt = true}
 
-        -- Atocomplete
+        -- Autocomplete
         use {"hrsh7th/nvim-compe", opt = true}
         -- use {"nvim-lua/completion-nvim", opt = true}
         use {"hrsh7th/vim-vsnip", opt = true}
         use {"rafamadriz/friendly-snippets", opt = true}
 
-        -- Teesitter
+        -- Treesitter
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
         use {"windwp/nvim-ts-autotag", opt = true}
 
-        -- Eplorer
+        -- Explorer
         use "kyazdani42/nvim-tree.lua"
         -- TODO remove when open on dir is supported by nvimtree
         use "kevinhwang91/rnvimr"
@@ -84,14 +84,14 @@ return require("packer").startup(
         use {"glepnir/galaxyline.nvim", opt = true}
         use {"romgrk/barbar.nvim", opt = true}
 
-		-- Flutter 
+	-- Flutter 
         use {"thosakwe/vim-flutter", opt = true}
 
-		-- vim-surround
-		use {"machakann/vim-sandwich" , opt = true}
+	-- vim-surround
+	use {"machakann/vim-sandwich" , opt = true}
 
-		-- Sneak
-		use {"justinmk/vim-sneak", opt = true}
+	-- Sneak
+	use {"justinmk/vim-sneak", opt = true}
 
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
