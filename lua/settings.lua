@@ -40,5 +40,3 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.o.guifont = "FiraCode Nerd Font:h17"
 
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
-
-vim.cmd('let g:sneak#label = 1')

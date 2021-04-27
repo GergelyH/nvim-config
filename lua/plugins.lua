@@ -30,7 +30,6 @@ end
 
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
-vim.cmd('let g:sneak#label = 1')
 return require("packer").startup(
     function(use)
         -- Packer can manage itself as an optional plugin
@@ -71,7 +70,7 @@ return require("packer").startup(
         use {"lewis6991/gitsigns.nvim", opt = true}
         use {"liuchengxu/vim-which-key", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
-        -- use {"windwp/nvim-autopairs", opt = true}
+        use {"windwp/nvim-autopairs", opt = true}
         use {"terrortylor/nvim-comment", opt = true}
         use {"kevinhwang91/nvim-bqf", opt = true}
 
@@ -110,7 +109,7 @@ return require("packer").startup(
         require_plugin("gitsigns.nvim")
         require_plugin("vim-which-key")
         require_plugin("dashboard-nvim")
-        -- require_plugin("nvim-autopairs")
+        require_plugin("nvim-autopairs")
         require_plugin("nvim-comment")
         require_plugin("nvim-bqf")
         require_plugin("nvcode-color-schemes.vim")

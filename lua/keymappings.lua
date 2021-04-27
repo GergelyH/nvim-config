@@ -42,9 +42,9 @@ vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
 
 -- I hate escape
--- vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
 
 -- Tab switch buffer
 vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
@@ -60,14 +60,7 @@ vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 -- vim.cmd('inoremap <expr> <TAB> (\"\\<C-n>\")')
 -- vim.cmd('inoremap <expr> <S-TAB> (\"\\<C-p>\")')
 
--- Complete
-vim.cmd('inoremap <silent><expr> <C-Space> compe#complete()')
-vim.cmd('inoremap <silent><expr> <CR>      compe#confirm(\'<CR>\')')
-vim.cmd('inoremap <silent><expr> <C-e>     compe#close(\'<C-e>\')')
-vim.cmd('inoremap <silent><expr> <C-f>     compe#scroll({ \'delta\': +4 })')
-vim.cmd('inoremap <silent><expr> <C-d>     compe#scroll({ \'delta\': -4 })')
 -- vim.api.nvim_set_keymap('i', '<C-TAB>', 'compe#complete()', {noremap = true, silent = true, expr = true})
-
 
 -- vim.cmd([[
 -- map p <Plug>(miniyank-autoput)
@@ -75,19 +68,3 @@ vim.cmd('inoremap <silent><expr> <C-d>     compe#scroll({ \'delta\': -4 })')
 -- map <leader>n <Plug>(miniyank-cycle)
 -- map <leader>N <Plug>(miniyank-cycleback)
 -- ]])
-
--- Easymotion
--- vim.cmd('nnoremap <Leader>mw <Plug>(easymotion-overwin-w)')
-
--- Sneak
-vim.cmd('nmap s <Plug>SneakLabel_s')
-vim.cmd('nmap S <Plug>SneakLabel_S')
-
-vim.cmd('xmap s <Plug>SneakLabel_s')
-vim.cmd('xmap S <Plug>SneakLabel_S')
-
-
-vim.cmd('omap z <Plug>SneakLabel_s')
-vim.cmd('omap Z <Plug>SneakLabel_S')
-
-

@@ -4,9 +4,9 @@ lspconfig.dartls.setup{
     on_attach = require'lsp'.common_on_attach,
     init_options = {
       closingLabels = true,
-      flutterOutline = true,
+      flutterOutline = false,
       onlyAnalyzeProjectsWithOpenFiles = false,
-      outline = true,
+      outline = false,
       suggestFromUnimportedLibraries = true,
 	  completeFunctionCalls = true,
 	  insertArgumentPlaceholders = true,
