@@ -11,37 +11,53 @@ _G.MUtils = {}
 
 -- TEST
 vim.g.completion_confirm_key = ""
-MUtils.completion_confirm = function()
-    if vim.fn.pumvisible() ~= 0 then
-        if vim.fn.complete_info()["selected"] ~= -1 then
-            vim.fn["compe#confirm"]()
-            -- return npairs.esc("<c-y>")
-            return npairs.esc("")
-        else
-            vim.defer_fn(function()
-                vim.fn["compe#confirm"]("<cr>")
-            end, 20)
-            return npairs.esc("<c-n>")
-        end
+-- MUtils.completion_confirm = function()
+--     if vim.fn.pumvisible() ~= 0 then
+--         if vim.fn.complete_info()["selected"] ~= -1 then
+--             vim.fn["compe#confirm"]()
+--             -- return npairs.esc("<c-y>")
+--             return npairs.esc("")
+--         else
+--             vim.defer_fn(function()
+--                 vim.fn["compe#confirm"]("<cr>")
+--             end, 20)
+--             return npairs.esc("<c-n>")
+--         end
+--     else
+--         return npairs.check_break_line_char()
+--     end
+-- end
+-- -- TEST
+-- 
+-- MUtils.completion_confirm = function()
+--     if vim.fn.pumvisible() ~= 0 then
+--         if vim.fn.complete_info()["selected"] ~= -1 then
+--             vim.fn["compe#confirm"]()
+--             return npairs.esc("")
+--         else
+--             vim.api.nvim_select_popupmenu_item(0, false, false, {})
+--             vim.fn["compe#confirm"]()
+--             return npairs.esc("<c-n>")
+--         end
+--     else
+--         return npairs.check_break_line_char()
+--     end
+-- end
+MUtils.completion_confirm=function()
+  local retval = nil	
+  if vim.fn.pumvisible() ~= 0  then
+    if vim.fn.complete_info()["selected"] ~= -1 then
+      retval = vim.fn["compe#confirm"](npairs.esc("<cr>"))
     else
-        return npairs.check_break_line_char()
+      retval = npairs.esc("<cr>")
     end
-end
--- TEST
-
-MUtils.completion_confirm = function()
-    if vim.fn.pumvisible() ~= 0 then
-        if vim.fn.complete_info()["selected"] ~= -1 then
-            vim.fn["compe#confirm"]()
-            return npairs.esc("")
-        else
-            vim.api.nvim_select_popupmenu_item(0, false, false, {})
-            vim.fn["compe#confirm"]()
-            return npairs.esc("<c-n>")
-        end
-    else
-        return npairs.check_break_line_char()
-    end
+  else
+    retval = npairs.autopairs_cr()
+  end
+  print(retval)
+  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+  vim.api.nvim_win_set_cursor(0, {row, col - 5})
+  return retval
 end
 
 MUtils.tab = function()
@@ -71,7 +87,7 @@ MUtils.s_tab = function()
 end
 
 -- Autocompletion and snippets
-vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.MUtils.completion_confirm()', {expr = true, noremap = true})
+-- vim.api.nvim_set_keymap('i', '<CR>', 'v:lua.MUtils.completion_confirm() | :normal! hh', {expr = true, noremap = true})
 -- imap("<CR>", "v:lua.MUtils.completion_confirm()", {expr = true, noremap = true})
 imap("<Tab>", "v:lua.MUtils.tab()", {expr = true, noremap = true})
 imap("<S-Tab>", "v:lua.MUtils.s_tab()", {expr = true, noremap = true})

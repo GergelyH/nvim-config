@@ -3,6 +3,7 @@ vim.api.nvim_del_keymap('i','kj')
 vim.api.nvim_del_keymap('i','jj')
 
 vim.cmd('inoremap <silent><expr> <C-Space> compe#complete()')
+-- vim.cmd('inoremap <silent><expr> <CR>      compe#confirm(\'<CR>\')')
 
 -- Sneak
 vim.cmd('nmap s <Plug>SneakLabel_s')
