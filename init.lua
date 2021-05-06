@@ -1,11 +1,12 @@
 require('plugins')
 require('lv-globals')
 require('lv-utils')
-vim.cmd('luafile ~/.config/nvim/lv-settings.lua')
 require('lv-autocommands')
 require('settings')
+vim.cmd('luafile ~/.config/nvim/lv-settings.lua')
 require('keymappings')
-require('colorscheme')
+require('lv-nvimtree') -- This plugin must be required somewhere before colorscheme.  Placing it after will break navigation keymappings
+require('colorscheme') -- This plugin must be required somewhere after nvimtree. Placing it before will break navigation keymappings 
 require('lv-galaxyline')
 require('lv-comment')
 require('lv-compe')
@@ -13,13 +14,12 @@ require('lv-barbar')
 require('lv-dashboard')
 require('lv-telescope')
 require('lv-gitsigns')
-require('lv-nvimtree')
 require('lv-treesitter')
 require('lv-autopairs')
 require('lv-rnvimr')
+require('lv-which-key')
 
--- Which Key (Hope to replace with Lua plugin someday)
-vim.cmd('source ~/.config/nvim/vimscript/lv-whichkey/init.vim')
+-- TODO is there a way to do this without vimscript
 vim.cmd('source ~/.config/nvim/vimscript/functions.vim')
 
 -- LSP
@@ -45,11 +45,13 @@ require('lsp.emmet-ls')
 require('lsp.efm-general-ls')
 require('lsp.latex-ls')
 require('lsp.svelte-ls')
-require('lsp.tailwindcss-ls')
 
 --Own 
 vim.cmd('luafile ~/.config/nvim/own-init.lua')
 
+-- require('lsp.tailwindcss-ls')
 require('lsp.ruby-ls')
 require('lsp.kotlin-ls')
-require('lsp.lua-ls')
+require('lsp.vue-ls')
+require('lsp.angular-ls')
+
