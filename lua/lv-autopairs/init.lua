@@ -54,9 +54,9 @@ MUtils.completion_confirm=function()
   else
     retval = npairs.autopairs_cr()
   end
-  print(retval)
-  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-  vim.api.nvim_win_set_cursor(0, {row, col - 5})
+  -- print(retval)
+  -- local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+  -- vim.api.nvim_win_set_cursor(0, {row, col - 5})
   return retval
 end
 
