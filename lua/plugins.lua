@@ -41,7 +41,7 @@ return require("packer").startup(
         use {"kabouzeid/nvim-lspinstall", opt = true}
 
 	-- Additional lsp
-	use  {"norcalli/snippets.nvim", opt = True}
+	-- use  {"norcalli/snippets.nvim", opt = True}
 
         -- Telescope
         use {"nvim-lua/popup.nvim", opt = true}
@@ -67,7 +67,7 @@ return require("packer").startup(
         use "kevinhwang91/rnvimr"
 
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
-        use {"lewis6991/gitsigns.nvim", opt = true}
+        use {"lewis6991/gitsigns.nvim", opt = true, requires = { 'nvim-lua/plenary.nvim' }}
         use {"liuchengxu/vim-which-key", opt = true}
         use {"ChristianChiarulli/dashboard-nvim", opt = true}
         use {"windwp/nvim-autopairs", opt = true}
@@ -117,7 +117,7 @@ return require("packer").startup(
         require_plugin("galaxyline.nvim")
         require_plugin("barbar.nvim")
         require_plugin("vim-flutter")
-        require_plugin("snippets.nvim")
+        -- require_plugin("snippets.nvim")
         require_plugin("vim-sandwich")
         require_plugin("vim-sneak")
     end
