@@ -87,13 +87,28 @@ return require("packer").startup(
         use {"romgrk/barbar.nvim", opt = true}
 
 	-- Flutter 
-        use {"thosakwe/vim-flutter", opt = true}
+        -- use {"thosakwe/vim-flutter", opt = true}
+		use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
 
 	-- vim-surround
 	use {"machakann/vim-sandwich" , opt = true}
 
 	-- Sneak
 	use {"justinmk/vim-sneak", opt = true}
+
+		use {"ray-x/aurora", opt = true}
+		use {"tjdevries/colorbuddy.nvim", opt = true}
+		use {"tjdevries/gruvbuddy.nvim", opt = true}
+		use {"DilanGMB/nightbuddy", opt = true}
+		use {"marko-cerovac/material.nvim", opt = true}
+		use {"Th3Whit3Wolf/spacebuddy", opt = true}
+		-- use {"tjdevries/gruvbuddy.nvim", opt = true, requires = 'tjdevries/colorbuddy.vim'}
+		-- use {"DilanGMB/nightbuddy", opt = true, requires = 'tjdevries/colorbuddy.vim'}
+		-- use {"marko-cerovac/material.nvim", opt = true, requires = 'tjdevries/colorbuddy.vim'}
+		-- use {"Th3Whit3Wolf/spacebuddy", opt = true, requires = 'tjdevries/colorbuddy.vim'}
+
+		-- Extensions (dart)
+		use {"nvim-lua/lsp_extensions.nvim", opt = true}
 
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
@@ -119,9 +134,17 @@ return require("packer").startup(
         require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
         require_plugin("barbar.nvim")
-        require_plugin("vim-flutter")
+        -- require_plugin("vim-flutter")
+        require_plugin("flutter-tools.nvim")
         -- require_plugin("snippets.nvim")
         require_plugin("vim-sandwich")
         require_plugin("vim-sneak")
+        require_plugin("lsp_extensions.nvim")
+        require_plugin("ray-x/aurora")
+        require_plugin("tjdevries/colorbuddy.nvim")
+        require_plugin("tjdevries/gruvbuddy.nvim")
+        require_plugin("DilanGMB/nightbuddy")
+        require_plugin("marko-cerovac/material.nvim")
+        require_plugin("Th3Whit3Wolf/spacebuddy")
     end
 )
