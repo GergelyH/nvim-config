@@ -19,11 +19,13 @@
 -- 	},
 -- 	root_dir = lspconfig.util.root_pattern("pubspec.yaml")
 -- }
-
 require("flutter-tools").setup{
   experimental = { -- map of feature flags
     lsp_derive_paths = true, -- experimental: Attempt to find the user's flutter SDK
   },
-  flutter_path = "/opt/flutter/bin/flutter"
+  flutter_path = "/opt/flutter/bin/flutter",
+  lsp = {
+	  capabilities = dart_capabilities
+	}
   -- flutter_lookup_cmd = "dirname $(dirname $(readlink -f $(which flutter)))"
 }

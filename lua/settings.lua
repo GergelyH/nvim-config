@@ -41,4 +41,4 @@ vim.o.guifont = "FiraCode Nerd Font:h17"
 
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
 
-vim.cmd('set wildmode=longest:full')
+vim.cmd('set wildmode=longest:full,full')

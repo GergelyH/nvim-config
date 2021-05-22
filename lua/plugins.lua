@@ -96,6 +96,9 @@ return require("packer").startup(
 	-- Sneak
 	use {"justinmk/vim-sneak", opt = true}
 
+	--tpope best
+		use {"tpope/vim-unimpaired", opt = true}
+
 		use {"ray-x/aurora", opt = true}
 		use {"tjdevries/colorbuddy.nvim", opt = true}
 		use {"tjdevries/gruvbuddy.nvim", opt = true}
@@ -146,5 +149,6 @@ return require("packer").startup(
         require_plugin("DilanGMB/nightbuddy")
         require_plugin("marko-cerovac/material.nvim")
         require_plugin("Th3Whit3Wolf/spacebuddy")
+        require_plugin("tpope/vim-unimpaired")
     end
 )
