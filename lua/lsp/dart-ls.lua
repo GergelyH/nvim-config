@@ -25,7 +25,15 @@ require("flutter-tools").setup{
   },
   flutter_path = "/opt/flutter/bin/flutter",
   lsp = {
-	  capabilities = dart_capabilities
+		handlers = {["textDocument/publishDiagnostics"] =
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+        -- Disable underline, it's very annoying
+        underline = false,
+        -- Enable virtual text, override spacing to 4
+        virtual_text = {spacing = 4},
+        signs = true,
+        update_in_insert = false
+    })}
 	}
   -- flutter_lookup_cmd = "dirname $(dirname $(readlink -f $(which flutter)))"
 }
