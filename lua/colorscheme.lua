@@ -9,7 +9,7 @@ vim.g.nb_style = "midnight"
 vim.g.neon_style = "dark"
 vim.g.gruvbox_material_background = 'medium'
 vim.g.gruvbox_material_palette = 'mix'
-vim.g.gruvbox_material_diagnostic_text_highlight = 0
+vim.g.gruvbox_material_disable_italic_comment = 1
 -- vim.g.neon_italic_keyword = true
 -- vim.g.neon_italic_function = true
 

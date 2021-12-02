@@ -38,7 +38,7 @@ return require("packer").startup{
         use "kevinhwang91/rnvimr"
 
         -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
-        use {"lewis6991/gitsigns.nvim"}
+        -- use {"lewis6991/gitsigns.nvim"}
         -- use {"liuchengxu/vim-which-key"}
         use {"folke/which-key.nvim"}
         use {"ChristianChiarulli/dashboard-nvim"}
@@ -69,14 +69,14 @@ return require("packer").startup{
         --tpope best
 		use {"tpope/vim-unimpaired"}
 
-		use {"ray-x/aurora"}
-		use {"tjdevries/colorbuddy.nvim"}
-		use {"tjdevries/gruvbuddy.nvim", requires = 'tjdevries/colorbuddy.nvim'}
-		use {"DilanGMB/nightbuddy", requires = 'tjdevries/colorbuddy.nvim'}
-		use {"marko-cerovac/material.nvim"}
-		use {"Th3Whit3Wolf/spacebuddy", requires = 'tjdevries/colorbuddy.nvim'}
-		use {"folke/tokyonight.nvim"}
-		use {"rafamadriz/neon"}
+		-- use {"ray-x/aurora"}
+		-- use {"tjdevries/colorbuddy.nvim"}
+		-- use {"tjdevries/gruvbuddy.nvim", requires = 'tjdevries/colorbuddy.nvim'}
+		-- use {"DilanGMB/nightbuddy", requires = 'tjdevries/colorbuddy.nvim'}
+		-- use {"marko-cerovac/material.nvim"}
+		-- use {"Th3Whit3Wolf/spacebuddy", requires = 'tjdevries/colorbuddy.nvim'}
+		-- use {"folke/tokyonight.nvim"}
+		-- use {"rafamadriz/neon"}
 		-- use {"tjdevries/gruvbuddy.nvim", requires = 'tjdevries/colorbuddy.vim'}
 		-- use {"DilanGMB/nightbuddy", requires = 'tjdevries/colorbuddy.vim'}
 		-- use {"marko-cerovac/material.nvim", requires = 'tjdevries/colorbuddy.vim'}
@@ -87,21 +87,32 @@ return require("packer").startup{
 
         -- Colorschemes
 		use {"sainnhe/gruvbox-material"}
-		use {"Th-6Whit3Wolf/one-nvim"}
-		use {"navarasu/onedark.nvim"}
-		use {"Th3Whit3Wolf/space-nvim"}
+		-- use {"Th-6Whit3Wolf/one-nvim"}
+		-- use {"navarasu/onedark.nvim"}
+		-- use {"Th3Whit3Wolf/space-nvim"}
         -- Show cursor moves
 		-- use {"edluffy/specs.nvim"}
-		use {"edluffy/specs.nvim"}
+		-- use {"edluffy/specs.nvim"}
 		-- use {"edluffy/specs.nvim"}
 
         -- Smooth scroll
-        use 'karb94/neoscroll.nvim'
+        -- use 'karb94/neoscroll.nvim'
 
         -- Reload
 		use {"famiu/nvim-reload"}
 
         -- Colorizer
 		use {"norcalli/nvim-colorizer.lua"}
+		use {
+		  "folke/trouble.nvim",
+		  requires = "kyazdani42/nvim-web-devicons",
+		  config = function()
+			require("trouble").setup {
+			  -- your configuration comes here
+			  -- or leave it empty to use the default settings
+			  -- refer to the configuration section below
+			}
+		  end
+		}
     end
 }

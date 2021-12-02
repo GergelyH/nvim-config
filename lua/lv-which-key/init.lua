@@ -82,7 +82,7 @@ local mappings = {
         o = {"<cmd>DebugStepOver<cr>", "Step Over"},
         r = {"<cmd>DebugToggleRepl<cr>", "Toggle Repl"},
         s = {"<cmd>DebugStart<cr>", "Start"}
-    },
+		},
     g = {
         name = "+Git",
         j = {"<cmd>NextHunk<cr>", "Next Hunk"},
@@ -110,6 +110,7 @@ local mappings = {
         p = {"<cmd>Lspsaga preview_definition<cr>", "Preview Definition"},
         q = {"<cmd>Telescope quickfix<cr>", "Quickfix"},
         r = {"<cmd>Lspsaga rename<cr>", "Rename"},
+        R = {"<cmd>LspReferences<cr>", "References"},
         t = {"<cmd>LspTypeDefinition<cr>", "Type Definition"},
         x = {"<cmd>cclose<cr>", "Close Quickfix"},
         s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
